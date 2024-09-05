@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Movie</title>
+    <script>
+        function setDescriptionValue(sign) {
+            // Get the current description value
+            const descriptionInput = document.getElementById('id_discription');
+            let currentValue = descriptionInput.value.trim();
+
+            // If the current value is a number, apply the sign
+            if (currentValue !== '') {
+                let number = parseFloat(currentValue);
+
+                // Adjust the value based on the button clicked
+                if (sign === 'expense') {
+                    number = Math.abs(number) * -1; // Make the value negative
+                } else if (sign === 'income') {
+                    number = Math.abs(number); // Ensure the value is positive
+                }
+
+                // Update the input field
+                descriptionInput.value = number;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Add a Movie</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="button" onclick="setDescriptionValue('expense')">Expense</button>
+        <button type="button" onclick="setDescriptionValue('income')">Income</button>
+        <button type="submit">Submit</button>
+    </form>
+    <a href="{% url 'view_movies' %}">Back to Movies</a>
+</body>
+</html>

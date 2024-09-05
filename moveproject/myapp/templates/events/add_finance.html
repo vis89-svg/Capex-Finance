@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Finance</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .btn-group {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Add Finance for {{ event.event_name }}</h2>
+
+        <form method="POST" action="{% url 'add_finance' event.id %}">
+            {% csrf_token %}
+
+            <div class="btn-group" role="group" aria-label="Amount Type">
+                <button type="button" id="expense-button" class="btn btn-danger">Expense</button>
+                <button type="button" id="income-button" class="btn btn-success">Income</button>
+            </div>
+
+            {{ form.as_p }}
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <a href="{% url 'index' %}" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        var amountSign = 1;
+
+        document.getElementById('expense-button').addEventListener('click', function() {
+            amountSign = -1; // Set to negative for expense
+        });
+
+        document.getElementById('income-button').addEventListener('click', function() {
+            amountSign = 1; // Set to positive for income
+        });
+
+        document.querySelector('form').addEventListener('submit', function(event) {
+            var amountField = document.querySelector('[name="amount"]');
+            amountField.value = (parseFloat(amountField.value) * amountSign).toFixed(2); // Apply sign for expense/income
+        });
+    </script>
+</body>
+</html>
