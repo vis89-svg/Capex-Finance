@@ -74,11 +74,6 @@ Contributions are welcome! Please follow these steps:
 
 ---
 
-## 📜 License
-
-This project is licensed under the MIT License. See LICENSE for more information.
-
----
 
 ## 🙏 Acknowledgments
 
@@ -86,4 +81,4 @@ Special thanks to the team at Legacy IEDC UCEK for supporting the development of
 
 ---
 
-This version is formatted for easy copying and pasting into a README file without the code block formatting.
+
