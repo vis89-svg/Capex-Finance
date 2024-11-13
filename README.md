@@ -1,6 +1,3 @@
-Here’s the complete text in a format without code blocks for easier copying:
-
----
 
 # Capex Finance Management Website 📊💼
 
