@@ -26,7 +26,12 @@ SECRET_KEY = 'django-insecure-0csejauytk_fu11&5^+uhzb6le+h^u*ogyb9a63qx+=(zi+hr_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '85beb9e5a310.ngrok-free.app',
+    'localhost',
+    '127.0.0.1'
+]
+
 
 
 # Application definition
@@ -38,7 +43,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'movies',
     'myapp',
 ]
 
