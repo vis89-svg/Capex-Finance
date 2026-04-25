@@ -1,7 +1,7 @@
 
 # Capex Finance Management Website 📊💼
 
-**Capex Finance** is a web-based platform developed to manage and streamline finance operations for Legacy IEDC at UCEK. This platform provides secure access and management of financial data, enabling efficient tracking of expenses and budgeting.
+**Capex Finance** is a web-based platform developed to manage and streamline finance operations for Legacy IEDC at UCEK. This platform provides secure access and management of financial data, enabling efficient tracking of expenses and  for budgeting.
 
 ---
 
